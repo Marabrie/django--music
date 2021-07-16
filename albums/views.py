@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+def albums_list(request):
+    return render(request, 'albums/albums_list.html', {})
+
