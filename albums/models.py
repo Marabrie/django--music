@@ -8,7 +8,8 @@ class Albums(models.Model):
     artist = models.CharField(max_length=200)
     created_at = models.DateTimeField(default=timezone.now)
     Year_Released = models.DateTimeField(blank=True, null=True)
-
+    published_date = models.DateTimeField(blank=True, null=True)
+    
     def publish(self):
         self.published_date = timezone.now()
         self.save()
