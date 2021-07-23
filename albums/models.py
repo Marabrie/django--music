@@ -3,12 +3,22 @@ from django.db import models
 from django.utils import timezone
 
 
+class Artist(models.Model):
+    artist = models.CharField(max_length=200)
+    
+    def _str_(self):
+        return self.artist
+    
+    class Meta:
+        ordering = ['artist']
+
+
 class Albums(models.Model):
     title = models.CharField(max_length=200)
-    artist = models.CharField(max_length=200)
+    artist = models.ForeignKey(Artist, related_name='albums', on_delete=models.CASCADE, blank=True, null=True)
     created_at = models.DateTimeField(default=timezone.now)
     Year_Released = models.DateTimeField(blank=True, null=True)
-    published_date = models.DateTimeField(blank=True, null=True)
+    
     
     def publish(self):
         self.published_date = timezone.now()
@@ -16,3 +26,6 @@ class Albums(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ['title']

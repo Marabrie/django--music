@@ -1,8 +1,38 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Django Music App Project</title>
     </head>
+
+  <head>
+    <title> Mara's Django Music Collection</title>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/albums.css' %}">
+    <style type="text/css" media= "screen"</type>
+      ul {
+        list-style-image: url ("Bullet.png");
+        }
+    </style>
+  </head>
+  <body>
+    <h1> Mara's Favorite Songs</h1>
+
+    <ul>
+        <li> "Lullaby"  Disintegration(1989)   The Cure </li>
+        <li> "Believer"  Evolve(2017)  Imagine Dragons</li>
+        <li> "Flood Down in Texas" Texas Flood(1983) BB King & Stevie Ray Vaughn</li>
+        <li> "Hello"  25(2015)  Adele</li>
+        <li> "Deep River - Mountain High"  Proud Mary: The Best of Ike & Tina Turner (1991)  Tina Turner</li>
+        <li> "Burning Down the House"  Speaking in Tongues(1982)  Talking Heads </li>
+        <li> "Missionary Man"  Revenge(1986)  Eurythmics</li>
+        <li> "Low"  Mail on Sunday(2007) Flo Rida</li>
+        <li> "Set Fire to the Rain"  21(2011)  Adele </li> 
+    </ul>
+  </body>
+</html> 
+    
     <body>
         <header>
             <h1><a href="/">Albums! Albums! Albums!</a></h1>
@@ -16,9 +46,14 @@
         </article>
         {% endfor %}
         <article>
+            
             <time>published: 14.06.2014, 12:14</time>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+            <h2><a href="">Disintegration (1989)</a></h2>
+            <p> Artist: The Cure </p>
+            <h3><a href="">Evolve (2017)</a></h3>
+            <p> Artist: Imagine Dragons </p>
+            
+            
         </article>
     </body>
 </html>
