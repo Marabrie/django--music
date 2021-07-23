@@ -1,0 +1,13 @@
+{% extends 'album/album_list.html' %}
+
+{% block content %}
+    <article class="album_list">
+        {% if album.published_date %}
+            <time class="date">
+                {{ album_list.published_date }}
+            </time>
+        {% endif %}
+        <h2>{{ album.title }}</h2>
+        <p>{{ album.text|linebreaksbr }}</p>
+    </article>
+{% endblock %}
