@@ -1,11 +1,11 @@
 from django import forms
-from .models import Albums
+from .models import Album
 from django.db.models.fields import CharField
 
 
 class AlbumForm(forms.ModelForm):
     class Meta:
-        model = Albums
+        model = Album
         fields = [
             'title',
             'artist',

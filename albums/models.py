@@ -6,20 +6,19 @@ from django.utils import timezone
 class Artist(models.Model):
     artist = models.CharField(max_length=200)
     
-    def _str_(self):
+    def __str__(self):
         return self.artist
     
     class Meta:
         ordering = ['artist']
 
 
-class Albums(models.Model):
+class Album(models.Model):
     title = models.CharField(max_length=200)
     artist = models.ForeignKey(Artist, related_name='albums', on_delete=models.CASCADE, blank=True, null=True)
     created_at = models.DateTimeField(default=timezone.now)
-    Year_Released = models.DateTimeField(blank=True, null=True)
-    
-    
+    Year_Released = models.DateField(blank=True, null=True)
+        
     def publish(self):
         self.published_date = timezone.now()
         self.save()

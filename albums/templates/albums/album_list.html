@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Mara's Music App Project</title>
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/albums.css' %}">
+    </head>
+    <body>
+        <header class="page-header">
+          <div class="container">
+              <h1><a href="/">Albums! Albums! Albums! </a></h1>
+            </div>
+            <article>
+                <time>published: 07.23.2021 , 9:51</time>
+                <h2><a href="">My first album!</a></h2>
+            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            </article>
+            
+            <article>
+                <time>published: 07.23.2021 , 9:51</time>
+                <h2><a href="">My second album!</a></h2>
+            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            </article>
+
+        </header>
+        <main class="container">
+            <div class="row">
+                <div class="col">
+                {% block content %}
+                {% endblock %}
+                </div>
+           </div>
+       </main>
+   </body>
+</html>
