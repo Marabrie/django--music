@@ -17,7 +17,7 @@ class Album(models.Model):
     title = models.CharField(max_length=200)
     artist = models.ForeignKey(Artist, related_name='albums', on_delete=models.CASCADE, blank=True, null=True)
     created_at = models.DateTimeField(default=timezone.now)
-    Year_Released = models.DateField(blank=True, null=True)
+    Year_Released = models.IntegerField(blank=True, null=True)
         
     def publish(self):
         self.published_date = timezone.now()
@@ -28,3 +28,4 @@ class Album(models.Model):
 
     class Meta:
         ordering = ['title']
+        
