@@ -1,13 +1,13 @@
-{% extends 'album/album_list.html' %}
+{% extends 'album/base.html' %}
 
 {% block content %}
-    <article class="album_list">
-        {% if album.published_date %}
+    <article class="album">
+        {% if album.created_at %}
             <time class="date">
-                {{ album_list.published_date }}
+                {{ album.created_at }}
             </time>
         {% endif %}
         <h2>{{ album.title }}</h2>
-        <p>{{ album.text|linebreaksbr }}</p>
+        <p>{{ album.artist|linebreaksbr }}</p>
     </article>
 {% endblock %}
