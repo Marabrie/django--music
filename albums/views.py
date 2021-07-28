@@ -17,8 +17,8 @@ def album_create_views(request):
     return render(request, "albums/album_create_views.html", context)
 
 def album_list(request):
-    album = Album.objects.filter(created_at__lte=timezone.now()).order_by('created_at')
-    return render(request, 'albums/album_list.html', {'album': album})
+    albums = Album.objects.all()
+    return render(request, 'albums/album_list.html', {'albums': albums})
 
 def album_detail(request, pk):
     album = get_object_or_404(Album, pk=pk)
@@ -35,10 +35,10 @@ def album_new(request):
             return redirect('album_detail', pk=album.pk)
         else:
             form = AlbumForm()
-        return render(request, 'albums/album_edit.html', {'form': form})
+        return redirect(request, 'albums/album_edit.html', {'form': form})
 
 def album_edit(request, pk):
-    post = get_object_or_404(album_create_views, pk=pk)
+    album= get_object_or_404(Album, pk=pk)
     if request.method == "POST":
         form = AlbumForm(request.POST, instance=album)
         if form.is_valid():
@@ -50,3 +50,9 @@ def album_edit(request, pk):
     else:
         form = AlbumForm(instance=album)
     return render(request, 'albums/album_edit.html', {'form': form})
+
+    def album_delete(request,pk):
+        album_to_delete = get_object_or_404(Album, pk=pk)
+        album_to_delete.delete
+        return redirect('album_list')
+    
