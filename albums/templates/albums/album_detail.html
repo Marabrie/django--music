@@ -2,6 +2,13 @@
 
 {% block content %}
     <article class="album">
+        <aside class="actions">
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'album_edit' pk=album.pk %}">
+              {% include './icons/pencil-fill.svg' %}
+            </a>
+        {% endif %}
+        </aside>
         {% if album.created_at %}
             <time class="date">
                 {{ album.created_at }}
