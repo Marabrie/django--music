@@ -1,7 +1,7 @@
-{% extends 'album_list.html' %}
+{% extends 'albums/base.html' %}
 
 {% block content %}
-<form>
+<form method="POST" class="album-form">{% csrf_token %}
 {{form.as_p }}
 <input type='submit' value="Save" />
 

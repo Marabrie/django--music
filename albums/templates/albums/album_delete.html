@@ -1,0 +1,9 @@
+{% extends 'albums/base.html' %}
+
+{% block content %}
+    <h2>Delete album</h2>
+    <form method="POST" class="album-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

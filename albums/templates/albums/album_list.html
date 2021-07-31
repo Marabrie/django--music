@@ -1,5 +1,7 @@
 {% extends 'albums/base.html' %}
 
+{% load static%}
+
 {% block content %}
     {% for album in albums %}
        <article class="album">
@@ -11,6 +13,7 @@
        </article>
    {% endfor %}
 {% endblock %}
-           
+
+
        
        

@@ -7,7 +7,18 @@
             <a class="btn btn-default" href="{% url 'album_edit' pk=album.pk %}">
               {% include './icons/pencil-fill.svg' %}
             </a>
-        {% endif %}
+            <a class="btn btn-default" href="{% url 'album_delete' pk=album.pk %}" onclick="return confirm('Are you sure you want to delete this?')">
+              {% include './icons/trash.svg' %}
+              {% if album.favorite == True %}
+            <a class="btn btn-default" href="{% url 'album_favorite' pk=album.pk %}" id="favorite">
+               {% include './icons/emoji-heart-eyes-fill.svg' %}
+            </a> 
+            {% else %}
+            <a class="btn btn-default" href="{% url 'album_favorite' pk=album.pk %}">
+                {% include './icons/emoji-heart-eyes-fill.svg' %}
+             </a>
+            {% endif %}
+            {% endif %}
         </aside>
         {% if album.created_at %}
             <time class="date">

@@ -76,4 +76,8 @@ h4 {
 .btn-default:hover {
     color: #FFFFFF;
     background-color: #C25100;
+} 
+
+#favorite {
+    background-color: royalblue;
 }
