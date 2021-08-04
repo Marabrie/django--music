@@ -4,14 +4,19 @@
 
 {% block content %}
     {% for album in albums %}
-       <article class="album">
-           <time class="date">
-               {{ album.created_at }}
-           </time>
+       <article class="album"><br>
            <h2><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}</a></h2>
-           <p>{{ album.artist|linebreaksbr }}    {{ album.Year_Released }}</p>
+           <p>{{ album.artist|linebreaksbr }}    {{ album.Year_Released }}</p><br>
+
+           
+           <time class="date">
+            {{ album.created_at }}
+           </time>
+
        </article>
    {% endfor %}
+
+
 {% endblock %}
 
 
